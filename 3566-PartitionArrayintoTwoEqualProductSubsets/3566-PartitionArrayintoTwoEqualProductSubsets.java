@@ -1,4 +1,4 @@
-// Last updated: 21/07/2026, 13:37:17
+// Last updated: 21/07/2026, 13:38:56
 1class Solution {
 2    public boolean checkEqualPartitions(int[] nums, long target) {
 3        long sum =1;
@@ -22,12 +22,10 @@
 21        }
 22        boolean ans =false;
 23        for(int i=idx; i<nums.length; i++){
-24            boolean a=result(nums, pro*nums[i], i+1, target);
-25            if(a){
-26                ans=true;
-27            }
-28        }
-29        return ans;
-30
-31    }
-32}
+24            ans = ans || result(nums, pro*nums[i], i+1, target);
+25            
+26        }
+27        return ans;
+28
+29    }
+30}
